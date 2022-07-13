@@ -1,0 +1,26 @@
+name: ci
+
+on: 
+  workflow_dispatch:
+    inputs:
+      id:
+        description: 'Run ID.'
+        required: false
+
+jobs:
+  id:
+    name: Workflow ID Provider
+    runs-on: ubuntu-latest
+    steps:
+      - name: ${{github.event.inputs.id}}
+        run: echo run identifier ${{ inputs.id }}
+  validation:
+    name: Validation
+    strategy:
+      matrix:
+        os: [ubuntu-18.04, ubuntu-20.04]
+        version: [10, 12]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: greetings
+        run: false
