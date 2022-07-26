@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ${{github.event.foo.inputs.id}}
-        run: echo run identifier ${{ inputs.id }}
+        run: echo run identifier ${{ inputss.id.foo }}
   validation:
     name: Validation
     strategy:
