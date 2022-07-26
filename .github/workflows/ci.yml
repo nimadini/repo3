@@ -6,13 +6,12 @@ on:
       id:
         description: 'Run ID.'
         required: false
-foood
 jobs:
   id:
     name: Workflow ID Provider
     runs-on: ubuntu-latest
     steps:
-      - name: ${{github.event.inputs.id}}
+      - name: ${{github.event.foo.inputs.id}}
         run: echo run identifier ${{ inputs.id }}
   validation:
     name: Validation
